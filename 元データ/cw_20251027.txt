@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>動画 × SNS広告で"採用"を劇的に変える</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+```
+    body {
+        font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+        line-height: 1.8;
+        color: #333;
+        overflow-x: hidden;
+    }
+
+    /* Hero Section */
+    .hero {
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e22ce 100%);
+        color: white;
+        text-align: center;
+        padding: 120px 20px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: 
+            radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
+            radial-gradient(circle at 80% 80%, rgba(255,255,255,0.05) 0%, transparent 50%);
+        animation: pulse 8s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.8; }
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .hero-badge {
+        display: inline-block;
+        background: rgba(255,255,255,0.2);
+        padding: 10px 30px;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        margin-bottom: 30px;
+        backdrop-filter: blur(10px);
+        animation: fadeInDown 1s ease-out;
+    }
+
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .hero h1 {
+        font-size: 3.5rem;
+        font-weight: 900;
+        margin-bottom: 30px;
+        text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        line-height: 1.3;
+        animation: fadeInUp 1s ease-out 0.2s both;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .hero p {
+        font-size: 1.4rem;
+        margin-bottom: 50px;
+        opacity: 0.95;
+        animation: fadeInUp 1s ease-out 0.4s both;
+    }
+
+    .cta-button {
+        display: inline-block;
+        padding: 20px 60px;
+        background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+        color: white;
+        text-decoration: none;
+        border-radius: 50px;
+        font-size: 1.3rem;
+        font-weight: bold;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        box-shadow: 0 10px 40px rgba(255,107,107,0.4);
+        position: relative;
+        overflow: hidden;
+        animation: fadeInUp 1s ease-out 0.6s both;
+    }
+
+    .cta-button::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+        transition: left 0.5s;
+    }
+
+    .cta-button:hover::before {
+        left: 100%;
+    }
+
+    .cta-button:hover {
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 15px 50px rgba(255,107,107,0.6);
+    }
+
+    /* Section Styles */
+    .section {
+        padding: 100px 20px;
+        position: relative;
+    }
+
+    .section-title {
+        font-size: 2.8rem;
+        text-align: center;
+        margin-bottom: 20px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 900;
+        position: relative;
+        display: inline-block;
+        width: 100%;
+    }
+
+    .section-subtitle {
+        text-align: center;
+        font-size: 1.2rem;
+        color: #666;
+        margin-bottom: 60px;
+    }
+
+    /* Problems Section */
+    .problems {
+        background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+    }
+
+    .problem-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .problem-item {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        border-left: 6px solid #ff6b6b;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .problem-item::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(255,107,107,0.05) 0%, transparent 100%);
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .problem-item:hover::before {
+        opacity: 1;
+    }
+
+    .problem-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 50px rgba(0,0,0,0.12);
+    }
+
+    .problem-item h3 {
+        color: #ff6b6b;
+        margin-bottom: 15px;
+        font-size: 1.3rem;
+        font-weight: bold;
+    }
+
+    /* Market Shift Section */
+    .market-shift {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .market-shift::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -10%;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        animation: float 8s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translateY(0) rotate(0deg); }
+        50% { transform: translateY(-20px) rotate(5deg); }
+    }
+
+    .market-shift .section-title {
+        color: white;
+        -webkit-text-fill-color: white;
+    }
+
+    .market-stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .stat-card {
+        background: rgba(255,255,255,0.15);
+        padding: 40px;
+        border-radius: 20px;
+        text-align: center;
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255,255,255,0.2);
+        transition: all 0.3s ease;
+    }
+
+    .stat-card:hover {
+        background: rgba(255,255,255,0.25);
+        transform: translateY(-10px);
+    }
+
+    .stat-card h3 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    /* MVV Section */
+    .mvv-section {
+        background: white;
+        position: relative;
+    }
+
+    .mvv-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 300px;
+        background: linear-gradient(180deg, #f8f9fa 0%, transparent 100%);
+        z-index: 0;
+    }
+
+    .mvv-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .mvv-card {
+        padding: 50px;
+        border-radius: 25px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        box-shadow: 0 20px 60px rgba(102,126,234,0.3);
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .mvv-card::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        transition: transform 0.5s;
+    }
+
+    .mvv-card:hover::before {
+        transform: translate(-25%, -25%);
+    }
+
+    .mvv-card:hover {
+        transform: translateY(-15px);
+        box-shadow: 0 25px 70px rgba(102,126,234,0.4);
+    }
+
+    .mvv-card > * {
+        position: relative;
+        z-index: 1;
+    }
+
+    .mvv-card h3 {
+        font-size: 2.5rem;
+        margin-bottom: 25px;
+        text-align: center;
+        font-weight: 900;
+    }
+
+    .mvv-card h4 {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+        opacity: 0.95;
+        font-weight: bold;
+    }
+
+    /* CJMH Section */
+    .cjmh-section {
+        background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+    }
+
+    .cjmh-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 35px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .cjmh-card {
+        background: white;
+        padding: 45px;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        text-align: center;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .cjmh-card::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        transform: scaleX(0);
+        transition: transform 0.3s;
+    }
+
+    .cjmh-card:hover::after {
+        transform: scaleX(1);
+    }
+
+    .cjmh-card:hover {
+        transform: translateY(-15px);
+        box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
+
+    .cjmh-card .icon {
+        font-size: 4rem;
+        margin-bottom: 25px;
+        display: inline-block;
+        transition: transform 0.3s;
+    }
+
+    .cjmh-card:hover .icon {
+        transform: scale(1.2) rotate(5deg);
+    }
+
+    .cjmh-card h3 {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+
+    /* Services Section */
+    .services {
+        background: white;
+        position: relative;
+    }
+
+    .service-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 35px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .service-item {
+        padding: 45px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(102,126,234,0.3);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .service-item::before {
+        content: '';
+        position: absolute;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, rgba(255,255,255,0.2) 0%, transparent 100%);
+        transition: top 0.5s;
+    }
+
+    .service-item:hover::before {
+        top: 0;
+    }
+
+    .service-item:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 20px 60px rgba(102,126,234,0.4);
+    }
+
+    .service-item h3 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        font-weight: bold;
+        position: relative;
+        z-index: 1;
+    }
+
+    .service-item p {
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Strengths Section */
+    .strengths {
+        background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+    }
+
+    .strength-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 35px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .strength-item {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        border-top: 6px solid #667eea;
+        transition: all 0.3s ease;
+        position: relative;
+    }
+
+    .strength-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+    }
+
+    .strength-item .number {
+        display: inline-flex;
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        font-weight: bold;
+        margin-bottom: 25px;
+        box-shadow: 0 5px 20px rgba(102,126,234,0.3);
+    }
+
+    .strength-item h3 {
+        color: #667eea;
+        margin-bottom: 15px;
+        font-size: 1.4rem;
+        font-weight: bold;
+    }
+
+    /* Trust/Comparison Section */
+    .trust {
+        background: white;
+    }
+
+    .comparison {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .comparison-card {
+        padding: 50px;
+        border-radius: 20px;
+        transition: all 0.3s ease;
+    }
+
+    .comparison-card.bad {
+        background: linear-gradient(135deg, #ffe6e6 0%, #ffcccc 100%);
+        border: 3px solid #ff6b6b;
+    }
+
+    .comparison-card.good {
+        background: linear-gradient(135deg, #e6f3ff 0%, #cce7ff 100%);
+        border: 3px solid #667eea;
+        box-shadow: 0 10px 40px rgba(102,126,234,0.2);
+    }
+
+    .comparison-card:hover {
+        transform: scale(1.02);
+    }
+
+    .comparison-card h3 {
+        font-size: 1.6rem;
+        margin-bottom: 30px;
+        font-weight: bold;
+    }
+
+    .comparison-card ul {
+        list-style: none;
+    }
+
+    .comparison-card li {
+        padding: 15px 0;
+        padding-left: 40px;
+        position: relative;
+        font-size: 1.1rem;
+    }
+
+    .comparison-card li::before {
+        content: '✕';
+        position: absolute;
+        left: 0;
+        color: #ff6b6b;
+        font-size: 1.8rem;
+        font-weight: bold;
+    }
+
+    .comparison-card.good li::before {
+        content: '✓';
+        color: #667eea;
+    }
+
+    /* Results Section */
+    .results {
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e22ce 100%);
+        color: white;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .results::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: 
+            radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 50%),
+            radial-gradient(circle at 20% 80%, rgba(255,255,255,0.05) 0%, transparent 50%);
+    }
+
+    .results .section-title {
+        color: white;
+        -webkit-text-fill-color: white;
+    }
+
+    .result-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .result-card {
+        background: rgba(255,255,255,0.15);
+        padding: 45px;
+        border-radius: 20px;
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255,255,255,0.2);
+        transition: all 0.3s ease;
+    }
+
+    .result-card:hover {
+        background: rgba(255,255,255,0.25);
+        transform: translateY(-10px);
+    }
+
+    .result-card h3 {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: 2px solid rgba(255,255,255,0.3);
+    }
+
+    .result-card .metric {
+        font-size: 3.5rem;
+        font-weight: 900;
+        margin: 30px 0;
+        background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: 0 2px 10px rgba(255,215,0,0.3);
+    }
+
+    /* Flow Section */
+    .flow {
+        background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+    }
+
+    .flow-steps {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .flow-step {
+        display: flex;
+        align-items: center;
+        background: white;
+        padding: 35px;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        transition: all 0.3s ease;
+    }
+
+    .flow-step:hover {
+        transform: translateX(10px);
+        box-shadow: 0 15px 50px rgba(0,0,0,0.12);
+    }
+
+    .flow-step .step-number {
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        font-weight: bold;
+        margin-right: 35px;
+        flex-shrink: 0;
+        box-shadow: 0 5px 20px rgba(102,126,234,0.3);
+    }
+
+    .flow-step h3 {
+        font-size: 1.4rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    /* Final CTA */
+    .final-cta {
+        background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+        color: white;
+        text-align: center;
+        padding: 120px 20px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .final-cta::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 50%);
+        animation: rotate 20s linear infinite;
+    }
+
+    @keyframes rotate {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+
+    .final-cta > * {
+        position: relative;
+        z-index: 1;
+    }
+
+    .final-cta h2 {
+        font-size: 3rem;
+        margin-bottom: 30px;
+        font-weight: 900;
+    }
+
+    .final-cta p {
+        font-size: 1.4rem;
+        margin-bottom: 50px;
+    }
+
+    .highlight-box {
+        background: rgba(255,255,255,0.15);
+        padding: 40px;
+        border-radius: 20px;
+        margin: 50px auto;
+        max-width: 800px;
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .highlight-box h3 {
+        font-size: 1.6rem;
+        margin-bottom: 25px;
+        font-weight: bold;
+    }
+
+    .highlight-box ul {
+        list-style: none;
+        text-align: left;
+    }
+
+    .highlight-box li {
+        padding: 12px 0;
+        font-size: 1.1rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .hero h1 {
+            font-size: 2.2rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+        }
+
+        .comparison {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .final-cta h2 {
+            font-size: 2rem;
+        }
+    }
+</style>
+```
+
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">年商30億円以上企業のマーケ・人事・経営企画部門向け</div>
+            <h1>動画 × SNS広告で<br>"採用"を劇的に変える</h1>
+            <p>成果を出すマーケ・人事部門のための<br>SNS動画サービス</p>
+            <a href="#contact" class="cta-button">無料相談はこちら</a>
+        </div>
+    </section>
+
+```
+<!-- Problems Section -->
+<section class="section problems">
+    <h2 class="section-title">中堅企業の採用課題</h2>
+    <p class="section-subtitle">「明確な成果」と「信頼できる外部パートナー」が求められている</p>
+    <div class="problem-list">
+        <div class="problem-item">
+            <h3>💰 費用対効果の悪化</h3>
+            <p>応募単価、採用単価を下げていきたいが、マス広告は費用が大きくROIが合わない</p>
+        </div>
+        <div class="problem-item">
+            <h3>📱 自社運用の限界</h3>
+            <p>会社の魅力をうまく伝えきれず、応募が少ない。自社SNS運用は手間がかかり成果が不透明</p>
+        </div>
+        <div class="problem-item">
+            <h3>🎯 ターゲット不一致</h3>
+            <p>欲しい人材からの応募が思うように来ない。広告代理店は追加費用が多く、担当者も頻繁に変わる</p>
+        </div>
+        <div class="problem-item">
+            <h3>🔄 早期離職の問題</h3>
+            <p>せっかく採用しても離職が絶えない。ミスマッチを防ぐ仕組みが必要</p>
+        </div>
+    </div>
+</section>
+
+<!-- Market Shift Section -->
+<section class="section market-shift">
+    <h2 class="section-title">広告市場の大きな変化</h2>
+    <div class="market-stats">
+        <div class="stat-card">
+            <h3>📺 → 📱</h3>
+            <p>マスメディアからデジタル広告へ大きくシフト。消費者は日常的にSNS・動画を通じて情報を取得</p>
+        </div>
+        <div class="stat-card">
+            <h3>📈 成長率No.1</h3>
+            <p>特にInstagram／TikTokの縦型動画広告は成長率が最も高い領域</p>
+        </div>
+        <div class="stat-card">
+            <h3>🎬 動画の威力</h3>
+            <p>静止画よりも視認性・記憶定着率・行動喚起力が高い</p>
+        </div>
+    </div>
+    <div class="highlight-box">
+        <h3>今の広告投資で成果を最大化するには<br>「ネット動画広告」が最適</h3>
+    </div>
+</section>
+
+<!-- MVV Section -->
+<section class="section mvv-section">
+    <h2 class="section-title">今なぜ採用に「MVV」が必要なのか？</h2>
+    <p class="section-subtitle">採用活動や営業活動の前に、まずは「伝わる土台（＝ブランド）」を整えることが最重要</p>
+    <div class="mvv-grid">
+        <div class="mvv-card">
+            <h3>Mission</h3>
+            <h4>「自分たちはなぜ存在するのか」</h4>
+            <p>社会に対する存在意義や、目指す理想の姿を明文化することで、共感が生まれます</p>
+        </div>
+        <div class="mvv-card">
+            <h3>Vision</h3>
+            <h4>「どんな未来を実現したいのか」</h4>
+            <p>求職者が"その会社で働く意味"をイメージしやすくなり、目的意識のある応募が増えます</p>
+        </div>
+        <div class="mvv-card">
+            <h3>Value</h3>
+            <h4>「どんな価値観・行動指針で仕事をするのか」</h4>
+            <p>自社にマッチする人物を自然と引き寄せ、採用後のミスマッチを防ぎます</p>
+        </div>
+    </div>
+</section>
+
+<!-- CJMH Section -->
+<section class="section cjmh-section">
+    <h2 class="section-title">採用ブランディングコンセプト『C・J・M・H ワーク』</h2>
+    <p class="section-subtitle">採用ブランディング成功の鍵は"4つの視点"を言語化すること</p>
+    <div class="cjmh-grid">
+        <div class="cjmh-card">
+            <div class="icon">🏢</div>
+            <h3>Company</h3>
+            <p>会社そのものの魅力を言語化</p>
+        </div>
+        <div class="cjmh-card">
+            <div class="icon">💼</div>
+            <h3>Job</h3>
+            <p>職業・働き方の魅力を言語化</p>
+        </div>
+        <div class="cjmh-card">
+            <div class="icon">🎯</div>
+            <h3>Mission</h3>
+            <p>商品・サービスや社会的意義を言語化</p>
+        </div>
+        <div class="cjmh-card">
+            <div class="icon">👥</div>
+            <h3>Human</h3>
+            <p>今働く社員の魅力を言語化</p>
+        </div>
+    </div>
+    <div class="highlight-box" style="background: white; color: #333; box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
+        <h3 style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">この4点を言語化し、全体に一貫性を持たせることで、<br>動画・LP・SNSなどに「芯」が通り、採用ブランドが完成します</h3>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="section services">
+    <h2 class="section-title">当社の提供サービス</h2>
+    <p class="section-subtitle">制作から運用、改善までワンストップ</p>
+    <div class="service-list">
+        <div class="service-item">
+            <h3>🎬 縦型動画制作</h3>
+            <p>撮影＋編集まで一貫対応。Instagram／TikTok最適化された縦型動画を制作</p>
+        </div>
+        <div class="service-item">
+            <h3>📱 SNS広告運用代行</h3>
+            <p>Instagram／TikTok広告の配信・最適化を専門チームが担当</p>
+        </div>
+        <div class="service-item">
+            <h3>🌐 LP制作・フォーム構築</h3>
+            <p>問合せ導線設計まで完全サポート。CVRを最大化する設計</p>
+        </div>
+        <div class="service-item">
+            <h3>📊 レポート分析＋改善提案</h3>
+            <p>データに基づいた継続的な改善提案で成果を最大化</p>
+        </div>
+    </div>
+</section>
+
+<!-- Strengths Section -->
+<section class="section strengths">
+    <h2 class="section-title">当社の5つの強み</h2>
+    <div class="strength-list">
+        <div class="strength-item">
+            <div class="number">1</div>
+            <h3>スピード感</h3>
+            <p>最短5日で配信開始。スピーディーな対応で機会損失を防ぎ、競合に先駆けてターゲットにリーチします</p>
+        </div>
+        <div class="strength-item">
+            <div class="number">2</div>
+            <h3>ROI重視</h3>
+            <p>再生数ではなく「問合せ・応募・売上」で評価。成果に直結する運用で費用対効果を最大化します</p>
+        </div>
+        <div class="strength-item">
+            <div class="number">3</div>
+            <h3>明朗会計</h3>
+            <p>これ以上かからない安心料金。追加費用なしの明確な料金体系で予算管理も安心です</p>
+        </div>
+        <div class="strength-item">
+            <div class="number">4</div>
+            <h3>豊富な実績</h3>
+            <p>飲食・美容・リクルート・小売・サービス業など多様な業界で成果を出してきた実績があります</p>
+        </div>
+        <div class="strength-item">
+            <div class="number">5</div>
+            <h3>部署負担ゼロ</h3>
+            <p>マーケ・人事のリソースを削減。ワンストップ対応で工数を最小化し、本業に集中できます</p>
+        </div>
+    </div>
+</section>
+
+<!-- Trust/Comparison Section -->
+<section class="section trust">
+    <h2 class="section-title">他社との違い</h2>
+    <p class="section-subtitle">「安さ」ではなく「信用と安心」で選ばれています</p>
+    <div class="comparison">
+        <div class="comparison-card bad">
+            <h3>❌ よくある競合の手法</h3>
+            <ul>
+                <li>「月額35,000円〜」と安さをアピール</li>
+                <li>実際は広告費やオプションで膨らむ</li>
+                <li>結果的に高額になる</li>
+                <li>担当者が頻繁に変わる</li>
+                <li>追加費用の説明が不透明</li>
+            </ul>
+        </div>
+        <div class="comparison-card good">
+            <h3>✓ 当社の姿勢</h3>
+            <ul>
+                <li>最初から"これ以上かからない"明朗料金</li>
+                <li>追加費用なし</li>
+                <li>担当も固定で長期サポート</li>
+                <li>長期的なパートナーシップを重視</li>
+                <li>透明性のある報告体制</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Results Section -->
+<section class="section results">
+    <h2 class="section-title">実績・事例紹介</h2>
+    <p class="section-subtitle">費用対効果を数字で実証</p>
+    <div class="result-grid">
+        <div class="result-card">
+            <h3>小売チェーン</h3>
+            <div class="metric">120%増</div>
+            <p>Instagram広告で新規来店客数が大幅増加。店舗への誘導に成功</p>
+        </div>
+        <div class="result-card">
+            <h3>飲食企業（複数店舗）</h3>
+            <div class="metric">2.5倍</div>
+            <p>採用応募数が大幅に改善。質の高い応募者が増加</p>
+        </div>
+        <div class="result-card">
+            <h3>サービス業</h3>
+            <div class="metric">40%削減</div>
+            <p>動画広告で採用単価を大幅に削減。コスト効率が向上</p>
+        </div>
+    </div>
+</section>
+
+<!-- Flow Section -->
+<section class="section flow">
+    <h2 class="section-title">ご利用の流れ</h2>
+    <p class="section-subtitle">部署の手間を最小限に抑えて導入可能</p>
+    <div class="flow-steps">
+        <div class="flow-step">
+            <div class="step-number">1</div>
+            <div>
+                <h3>お問合せ</h3>
+                <p>まずはお気軽にご相談ください。貴社の課題をお聞かせください</p>
+            </div>
+        </div>
+        <div class="flow-step">
+            <div class="step-number">2</div>
+            <div>
+                <h3>ヒアリング</h3>
+                <p>課題や目標を詳しくお伺いし、最適なプランをご提案します</p>
+            </div>
+        </div>
+        <div class="flow-step">
+            <div class="step-number">3</div>
+            <div>
+                <h3>動画撮影・編集</h3>
+                <p>プロのクオリティで制作。貴社の魅力を最大限に引き出します</p>
+            </div>
+        </div>
+        <div class="flow-step">
+            <div class="step-number">4</div>
+            <div>
+                <h3>広告配信スタート</h3>
+                <p>最短5日で配信開始可能。すぐに成果測定を開始できます</p>
+            </div>
+        </div>
+        <div class="flow-step">
+            <div class="step-number">5</div>
+            <div>
+                <h3>レポート提出＆改善</h3>
+                <p>継続的な分析と改善提案で、さらなる成果向上を実現します</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final-cta" id="contact">
+    <h2>動画広告で成果を最大化する<br>信頼できる外部パートナー</h2>
+    <p>制作〜運用〜改善までワンストップ<br>マーケティング・人事・経営企画部門の負担を軽減</p>
+    <div class="highlight-box">
+        <h3>これで決まり！選ばれる理由</h3>
+        <ul>
+            <li>✓ 制作〜運用〜改善までワンストップで対応</li>
+            <li>✓ 追加費用ゼロ、これ以上かからない安心料金</li>
+            <li>✓ ROI重視で成果に直結する運用</li>
+            <li>✓ マーケティング・人事・経営企画部門の負担を軽減</li>
+            <li>✓ 映像撮影から最短12日で配信開始のスピード対応</li>
+        </ul>
+    </div>
+    <a href="#" class="cta-button" style="background: white; color: #ff6b6b;">無料相談を申し込む</a>
+</section>
+```
+
+</body>
+</html>
